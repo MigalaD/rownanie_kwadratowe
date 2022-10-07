@@ -1,0 +1,167 @@
+#include <iostream>
+#include <math.h>
+#include <cstdlib>
+#include <conio.h>
+#include <windows.h>
+#include <stdlib.h>
+
+using namespace std;
+
+double a,b,c,delta,x0,x1,x2,B2,wybor;
+
+int main()
+
+{
+    do
+    {
+        HANDLE hOut;
+        hOut = GetStdHandle( STD_OUTPUT_HANDLE );
+        cout << "Witam w programie do obliczania miejsc zerowych trojmianu kwadratowego."<< endl;
+        cout<<" "<<endl;
+        cout<<"Podaj wartosci twojej funkcji."<<endl;
+        cout<<"A: "<<endl;
+        cin>>a;
+        if(a!=0)
+        {
+            cout<<"B: "<<endl;
+            cin>>b;
+            cout<<"C: "<<endl;
+            cin>>c;
+
+            delta = (b*b)-(4*a*c);
+            if(delta>0)
+            {
+                x1=(-b-sqrt(delta))/(2*a);
+                x2=(c/a)/x1;
+                SetConsoleTextAttribute( hOut, FOREGROUND_GREEN );
+                cout<<"Miejsca zerowe tej funkcji to:"<<endl;
+                cout<<"x1: "<<x1<<endl;
+                cout<<"x2: "<<x2<<endl;
+
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                SetConsoleTextAttribute( hOut, FOREGROUND_BLUE );
+                cout<<"Autor: Damian Migala :)"<<endl;
+                getch();
+            }
+            else
+            {
+                if(delta==0)
+                {
+                    x0=-b/(2*a);
+                SetConsoleTextAttribute( hOut, FOREGROUND_GREEN );
+                cout<<"Miejscem zeorwym tej funkcji jest:"<<endl;
+                cout<<"x0: "<<x0<<endl;
+
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                SetConsoleTextAttribute( hOut, FOREGROUND_BLUE );
+                cout<<"Autor: Damian Migala :)"<<endl;
+                hOut = GetStdHandle( STD_OUTPUT_HANDLE );
+                getch();
+            }
+            else
+            {
+                if(delta<0)
+                {
+                    SetConsoleTextAttribute( hOut, FOREGROUND_RED );
+                    cout<<"Funkcja nie ma miejsc zerowych."<<endl;
+                    hOut = GetStdHandle( STD_OUTPUT_HANDLE );
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                SetConsoleTextAttribute( hOut, FOREGROUND_BLUE );
+                cout<<"Autor: Damian Migala :)"<<endl;
+                hOut = GetStdHandle( STD_OUTPUT_HANDLE );
+                getch();
+
+                }
+            }
+            }
+
+        }
+        else
+        {
+                SetConsoleTextAttribute( hOut, FOREGROUND_RED );
+                cout<<"Funkcja nie spelnia warunku, a rozne od zera!"<<endl;
+                hOut = GetStdHandle( STD_OUTPUT_HANDLE );
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                SetConsoleTextAttribute( hOut, FOREGROUND_BLUE );
+                cout<<"Autor: Damian Migala :)"<<endl;
+                hOut = GetStdHandle( STD_OUTPUT_HANDLE );
+                getch();
+        }
+        SetConsoleTextAttribute( hOut, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_RED );
+        system("cls");
+        hOut = GetStdHandle( STD_OUTPUT_HANDLE );
+        cout<<"Czy chcesz powtorzyc program? Wpisz jakas liczbe."<<endl;
+        cin>>wybor;
+        }while(wybor=1);
+
+    system("PAUSE");
+    return 0;
+}
